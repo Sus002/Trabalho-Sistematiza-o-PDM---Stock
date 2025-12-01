@@ -1,0 +1,187 @@
+/* GLOBAIS E RESET - Estética Pura P&B (iOS-like) */
+:root {
+    /* Cores Foco Monocromático: Branco e Preto */
+    --surface-light: #FFFFFF; /* Fundo principal e de cards: BRANCO PURO */
+    --background-light: #FFFFFF; /* Fundo da tela: BRANCO PURO */
+    --header-color: #F8F8F8; /* Barra superior (quase branca, para contraste sutil) */
+    --separator-color: #E0E0E0; /* Linhas finas de separação */
+    --text-primary: #1C1C1E; /* Preto quase puro */
+    --text-secondary: #8E8E93; /* Cinza sutil para textos secundários */
+    
+    /* Cores de Ação (Monocromático) */
+    --action-color: #000000; /* Preto para ações */
+    --action-hover: #333333; /* Cinza escuro para hover/pressionar */
+    
+    /* Alertas mantidos para UX, Acessibilidade e ODS 12 */
+    --error-color: #FF3B30; /* Vermelho Erro/Exclusão */
+    --warning-color: #FFCC00; /* Amarelo Aviso */
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    transition: all 0.2s ease-in-out; 
+}
+
+body {
+    width: 100vw; 
+    height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    background-color: var(--background-light); 
+    color: var(--text-primary);
+    line-height: 1.4;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; 
+}
+
+/* Simulação de Tela Cheia */
+body > * { 
+    max-width: 100%;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* HEADER - Barra de Navegação P&B */
+header {
+    background-color: var(--header-color);
+    color: var(--text-primary);
+    padding: 18px 0;
+    text-align: center;
+    border-bottom: 1px solid var(--separator-color);
+    position: sticky; 
+    top: 0;
+    z-index: 100;
+}
+
+header h1 {
+    font-size: 1.3em; 
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+header p {
+    font-size: 0.85em;
+    color: var(--text-secondary);
+}
+
+/* SEÇÕES */
+section {
+    background-color: var(--surface-light); 
+    margin: 0; 
+    padding: 10px 0;
+    border-top: 1px solid var(--separator-color);
+    border-bottom: 1px solid var(--separator-color);
+}
+
+#form-cadastro, #lista-estoque {
+    margin-bottom: 20px;
+}
+
+section h2 {
+    font-size: 1em;
+    color: var(--text-secondary);
+    font-weight: 500;
+    padding: 0 20px;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+/* FORMULÁRIO (Inputs e Botões P&B) */
+form {
+    padding: 0 20px;
+}
+
+form input[type="text"],
+form input[type="date"] {
+    width: 100%;
+    padding: 10px 15px;
+    margin-bottom: 15px;
+    border: 1px solid var(--separator-color);
+    border-radius: 9px; 
+    font-size: 1em;
+    color: var(--text-primary);
+    background-color: var(--surface-light);
+}
+
+form input[type="text"]:focus,
+form input[type="date"]:focus {
+    border-color: var(--action-color); 
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1); /* Sombra de foco sutil P&B */
+    background-color: var(--surface-light);
+}
+
+/* ESTILO DO BOTÃO PRINCIPAL (Monocromático) */
+form button[type="submit"] {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--action-color); /* Preto Sólido */
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1em;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Efeito de Pressão (Feedback Tátil P&B) */
+form button[type="submit"]:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    background-color: var(--action-hover);
+}
+
+/* ========================================================== */
+/* ESTILIZAÇÃO DA LISTA "SEU ESTOQUE" (READ) */
+/* ========================================================== */
+#listaDeItens {
+    list-style: none;
+    padding: 0;
+    background-color: var(--surface-light);
+}
+
+#listaDeItens li {
+    display: grid; /* Usando Grid para melhor alinhamento */
+    grid-template-columns: 1fr auto; /* Coluna 1: Conteúdo, Coluna 2: Botão */
+    gap: 10px;
+    align-items: center;
+    padding: 12px 20px;
+    border-bottom: 1px solid var(--separator-color);
+    background-color: var(--surface-light);
+}
+
+#listaDeItens li:last-child {
+    border-bottom: none;
+}
+
+#listaDeItens li > div {
+    /* Container do Nome e Validade */
+    padding-right: 10px;
+}
+
+#listaDeItens li strong {
+    font-size: 1em;
+    font-weight: 500;
+    color: var(--text-primary);
+    display: block;
+}
+
+#listaDeItens li p {
+    font-size: 0.8em;
+    color: var(--text-secondary);
+    margin: 2px 0 0 0;
+}
+
+/* Estiliza o texto de alerta dentro da lista */
+.alerta-texto {
+    margin-left: 5px;
+    font-size: 0.8em;
+    font-weight: 700;
+}
+
+/* ESTILOS DE AL
