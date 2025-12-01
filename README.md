@@ -68,12 +68,10 @@ Instalação e Uso:
 
 
 
-(Esta seção será preenchida após a codificação. Por enquanto, deixe assim:)
 
 
 
-    1. Clone o repositório do GitHub: \*\*\[INSERIR LINK AQUI]\*\*
-
+    1. Clone o repositório do GitHub: (https://github.com/Sus002/Trabalho-Sistematiza-o-PDM---Stock)
 
 
 &nbsp;   2. Abra o arquivo \*\*index.html\*\* em qualquer navegador web moderno.
@@ -93,4 +91,5 @@ Requisitos do Sistema:
 
 
     Dependências: Navegador Web Moderno (Chrome, Firefox, Safari) e conexão com a internet .
+
 
